@@ -3,6 +3,7 @@ module.exports =
     constructor: ->
       # create root element
       @rootElement = document.createElement('div')
+      @rootElement.style['min-width'] = '300px'
 
       # balance label
       balanceContainer = document.createElement('h3')
