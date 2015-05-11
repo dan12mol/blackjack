@@ -21,10 +21,17 @@ module.exports =
       dealerContainer = document.createElement('div')
       dealerContainerTitle = document.createElement('h3')
       dealerContainerTitle.textContent = 'Dealer'
+      dealerContainerTotal = document.createElement('h3')
+      dealerContainerTotalLabel = document.createElement('span')
+      dealerContainerTotalLabel.textContent = 'Total: '
+      @dealerTotal = document.createElement('span')
       dealerContainerCards = document.createElement('div')
       @dealerCards = document.createElement('ul')
       @dealerCards.classList.add('list-group')
+      dealerContainerTotal.appendChild(dealerContainerTotalLabel)
+      dealerContainerTotal.appendChild(@dealerTotal)
       dealerContainer.appendChild(dealerContainerTitle)
+      dealerContainer.appendChild(dealerContainerTotal)
       dealerContainerCards.appendChild(@dealerCards)
       dealerContainer.appendChild(dealerContainerCards)
 
@@ -32,10 +39,17 @@ module.exports =
       playerContainer = document.createElement('div')
       playerContainerTitle = document.createElement('h3')
       playerContainerTitle.textContent = 'You'
+      playerContainerTotal = document.createElement('h3')
+      playerContainerTotalLabel = document.createElement('span')
+      playerContainerTotalLabel.textContent = 'Total: '
+      @playerTotal = document.createElement('span')
       playerContainerCards = document.createElement('div')
       @playerCards = document.createElement('ul')
       @playerCards.classList.add('list-group')
+      playerContainerTotal.appendChild(playerContainerTotalLabel)
+      playerContainerTotal.appendChild(@playerTotal)
       playerContainer.appendChild(playerContainerTitle)
+      playerContainer.appendChild(playerContainerTotal)
       playerContainerCards.appendChild(@playerCards)
       playerContainer.appendChild(playerContainerCards)
 
@@ -65,3 +79,9 @@ module.exports =
 
     getPlayerCards: ->
       @playerCards
+
+    getDealerTotal: ->
+      @dealerTotal
+
+    getPlayerTotal: ->
+      @playerTotal
